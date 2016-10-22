@@ -2,6 +2,7 @@ import React from 'react';
 import { deleteDoc } from 'horizon-react/lib/utils';
 
 import styles from './styles';
+import TimeAgo from 'timeago-react'; // var TimeAgo = require('timeago-react');
 
 /**
  * A single todo list item.
@@ -15,6 +16,7 @@ import styles from './styles';
 export default ({ todo, horizon }) => (
   <li className={styles.item} key={todo.id}>
     <span className={styles.caption}>{todo.text || '-'}</span>
+    <TimeAgo className={styles.timeago} datetime={todo.datetime}/>
     <span className={styles.actions}>
       <i
         className="fa fa-remove"

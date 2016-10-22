@@ -83,6 +83,27 @@
   }
 }
 
+.sortButton {
+  composes: tCenter from 'styles/app';
+  display: inline-block;
+  box-sizing: border-box;
+
+  width: 50%;
+  padding: 12px;
+  font-size: .8em;
+
+  color: #fff;
+  background-color: #961842;
+
+  transition: all 250ms ease;
+
+  &:hover {
+    cursor: pointer;
+
+    background-color: #d03117;
+  }
+}
+
 .input {
   width: 100%;
   padding: 12px;
@@ -96,4 +117,11 @@
   &:focus, &:active {
     border-color: #961842;
   }
+}
+
+.timeago {
+  color: grey;
+  font-size: .4em;
+  position: absolute;
+  right: 30px;
 }

@@ -1,0 +1,6 @@
+{
+  "globalDevDependencies": {
+    "redux-devtools-dock-monitor": "registry:dt/redux-devtools-dock-monitor#1.1.1+20160902130643",
+    "redux-devtools-log-monitor": "registry:dt/redux-devtools-log-monitor#1.0.11+20160902130643"
+  }
+}

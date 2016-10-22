@@ -4,3 +4,6 @@ stats.json
 .idea
 .DS_STORE*
 .build
+typings
+.vscode
+rethinkdb_data
