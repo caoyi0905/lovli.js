@@ -1,11 +1,12 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import {bindActionCreators} from 'redux';
+import { bindActionCreators } from 'redux';
 
 import Logo from './Logo';
-import TodoList from './todos/TodoList';
-import AddTodoButton from './todos/AddTodoButton';
 import SortButton from './todos/SortButton';
+import TodoList from './todos/TodoList';
+import Page from './todos/Page';
+import AddTodoButton from './todos/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
 import styles from 'styles/app';
@@ -27,9 +28,10 @@ class App extends Component {
             <b>Welcome.</b>
             <br />
             You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
-      </p>
+          </p>
           <SortButton />
-          <TodoList limit={3} sortField={props.sortField} direction={props.direction} />
+          <TodoList curPage={props.curPage} limit={3} sortField={props.sortField} direction={props.direction} />
+          <Page curPage={props.curPage} />
           <AddTodoButton />
           <div className={styles.footer}>
             ToDos are deleted automatically every 10 minutes.
@@ -64,7 +66,8 @@ class App extends Component {
 function mapStateToProps(state) {
   return {
     sortField: state.sortParams.sortField,
-    direction: state.sortParams.direction
+    direction: state.sortParams.direction,
+    curPage: state.page.curPage,
   }
 }
 

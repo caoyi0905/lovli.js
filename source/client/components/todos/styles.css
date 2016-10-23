@@ -125,3 +125,28 @@
   position: absolute;
   right: 30px;
 }
+
+.page {
+  margin: 10px 0 10px 0;
+}
+
+.todoSize {
+  display: inline;
+  font-size: .9em;
+}
+
+.pageul {
+  display: inline !important;
+  position: absolute;
+  right: -10px;
+  margin: 0;
+}
+
+.pageli {
+  display: inline !important;
+  padding: 0 4px 0 4px;
+}
+
+.active {
+  background-color: lightgray;
+}

@@ -6,7 +6,11 @@ import styles from './styles';
 
 const AddTodoButton = (props) => {
   const collection = props.horizon('todos');
-  const addTodo = (t) => createDoc(collection, { text: t , datetime: new Date()});
+  const addTodo = (t) => {
+    let { dispatch } = props;
+    createDoc(collection, { text: t , datetime: new Date()});
+    //TODO: fresh the page
+  }
 
   return (
     <div>
