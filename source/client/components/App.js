@@ -10,7 +10,6 @@ import AddTodoButton from './todos/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
 import styles from 'styles/app';
-import DevTools from '../containers/DevTools';
 
 class App extends Component {
   constructor(props) {
@@ -55,7 +54,6 @@ class App extends Component {
             height="20px"
             />
         </div>
-        <DevTools />
       </div>
     );
   }

@@ -63,7 +63,7 @@ class Page extends Component {
                     }
                     {pageList.map(
                         page => (
-                            <li className={styles.pageli + ' ' + (page == curPage ? styles.active : '')}>
+                            <li className={styles.pageli + ' ' + (page == curPage ? styles.active : '')} key={page}>
                                 <a href="#" onClick={this._pageClickHandler.bind(this, page)}>
                                     <span>{page}</span>
                                 </a>

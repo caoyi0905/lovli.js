@@ -21,7 +21,7 @@ export default class TodoItem extends Component {
   }
 
   _removeTodo = () => {
-    let {curPage, dispatch} = this.props;
+    let {curPage, dispatch, horizon, todo} = this.props;
     deleteDoc(horizon('todos'), { id: todo.id });
     //TODO: fresh the page
   }

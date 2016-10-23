@@ -5,8 +5,6 @@ import { sortParamsReducer,pageReducer } from './reducers/todo'
 import { routerReducer } from 'react-router-redux';
 import actionTypeMiddleware from 'utils/redux/actionTypeMiddleware';
 
-import DevTools from './containers/DevTools'
-
 const rootReducer = combineReducers(
   Object.assign(
     {},
@@ -24,7 +22,6 @@ const configureStore = (initialState = {}) => {
       actionTypeMiddleware,
       thunkMiddleware
     ),
-    DevTools.instrument()
   )(createStore)(rootReducer, initialState);
 
   if (module.hot) {
