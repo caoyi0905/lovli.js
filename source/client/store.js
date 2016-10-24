@@ -1,15 +1,16 @@
 import thunkMiddleware from 'redux-thunk';
 import { createStore, compose, applyMiddleware, combineReducers } from 'redux';
 import reducers from './reducers';
-import { sortParamsReducer,pageReducer } from './reducers/todo'
-import { routerReducer } from 'react-router-redux';
+import { sortParamsReducer, pageReducer } from './reducers/todo'
+import {  routerReducer } from 'react-router-redux';
 import actionTypeMiddleware from 'utils/redux/actionTypeMiddleware';
 
 const rootReducer = combineReducers(
   Object.assign(
     {},
     reducers,
-    { routing: routerReducer,
+    {
+      routing: routerReducer,
       sortParams: sortParamsReducer,
       page: pageReducer
     },
@@ -43,7 +44,9 @@ let initStore = {
     direction: 'ascending'
   },
   page: {
-    curPage: 1 
+    curPage: 1,
+    action: 'next',
+    content: ''
   }
 }
 

@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import Logo from './Logo';
 import SortButton from './todos/SortButton';
 import TodoList from './todos/TodoList';
-import Page from './todos/Page';
 import AddTodoButton from './todos/AddTodoButton';
 
 import 'static/vendor/font-awesome/css/font-awesome.min.css';
@@ -14,11 +12,28 @@ import styles from 'styles/app';
 class App extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
+
   }
 
   render() {
-    const {props} = this;
+    const { props } = this;
+    let above = {};
+    let below = {};
+    if (props.direction === 'ascending') {
+      above = {
+        above: {
+          [props.sortField]: props.content
+        },
+        option: (props.action === 'next') ? 'open' : 'closed'
+      };
+    } else {
+      below = {
+        below: {
+          [props.sortField]: props.content
+        },
+        option: (props.action === 'next') ? 'open' : 'closed'
+      };
+    }
     return (
       <div>
         <div className={styles.container}>
@@ -29,8 +44,7 @@ class App extends Component {
             You're connected to <a href="https://github.com/rethinkdb/horizon" target="_blank">horizon</a>.
           </p>
           <SortButton />
-          <TodoList curPage={props.curPage} limit={3} sortField={props.sortField} direction={props.direction} />
-          <Page curPage={props.curPage} />
+          <TodoList above={above} below={below} limit={3} sortField={props.sortField} direction={props.direction} curPage={props.curPage} />
           <AddTodoButton />
           <div className={styles.footer}>
             ToDos are deleted automatically every 10 minutes.
@@ -66,7 +80,9 @@ function mapStateToProps(state) {
     sortField: state.sortParams.sortField,
     direction: state.sortParams.direction,
     curPage: state.page.curPage,
-  }
+    content: state.page.content,
+    action: state.page.action
+  };
 }
 
 export default connect(mapStateToProps)(App);

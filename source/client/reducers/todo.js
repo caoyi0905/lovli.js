@@ -1,5 +1,5 @@
 
-import { SET_ORDERNAME, PRE_PAGE, NEXT_PAGE, SET_PAGE } from '../constants';
+import { SET_ORDERNAME, PRE_PAGE, NEXT_PAGE, INIT_PAGE } from '../constants';
 import { combineReducers } from 'redux';
 
 function changeDirection(state = {}, {type} = {}) {
@@ -28,14 +28,15 @@ function sortParamsReducer(state = {}, { type, field } = {}) {
 
 function pageReducer(state = {}, { type, field } = {}) {
     if (type === PRE_PAGE) {
-        return {...state, curPage: state.curPage - 1 };
+        return {...state, curPage: state.curPage - 1,content:field,  action: 'pre' };
     }
     if (type === NEXT_PAGE) {
-        return {...state, curPage: state.curPage + 1 };
+        return {...state, curPage: state.curPage + 1,content: field, action: 'next' };
     }
-    if (type == SET_PAGE) {
-        return {...state, curPage: field };
+    if (type == INIT_PAGE) {
+        return {...state, curPage: 1 ,content: '', action: '' };
     }
+
     return state;
 }
 

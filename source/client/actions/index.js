@@ -1,5 +1,5 @@
 
-import { SET_ORDERNAME, PRE_PAGE, NEXT_PAGE, SET_PAGE } from '../constants';
+import { SET_ORDERNAME, PRE_PAGE, NEXT_PAGE, INIT_PAGE } from '../constants';
 
 export const setOrderName = (field) => {
   return {
@@ -8,21 +8,23 @@ export const setOrderName = (field) => {
   }
 }
 
-export const prePage = () => {
+export const prePage = (field) => {
   return {
-    type: PRE_PAGE
+    type: PRE_PAGE,
+    field
   }
 }
 
-export const nextPage = () => {
+export const nextPage = (field) => {
   return {
-    type: NEXT_PAGE
+    type: NEXT_PAGE,
+    field
   }
 }
 
-export const setPage = (field) => {
+export const initPage = (field) => {
   return {
-    type: SET_PAGE,
+    type: INIT_PAGE,
     field
   }
 }

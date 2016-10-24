@@ -5,4 +5,4 @@ export const PRE_PAGE = 'PRE_PAGE';
 
 export const NEXT_PAGE = 'NEXT_PAGE';
 
-export const SET_PAGE = 'SET_PAGE';
+export const INIT_PAGE = 'INIT_PAGE';

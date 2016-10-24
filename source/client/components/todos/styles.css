@@ -128,6 +128,7 @@
 
 .page {
   margin: 10px 0 10px 0;
+  text-align: right;
 }
 
 .todoSize {
@@ -136,15 +137,13 @@
 }
 
 .pageul {
-  display: inline !important;
-  position: absolute;
-  right: -10px;
+  display: inline-block;
   margin: 0;
 }
 
 .pageli {
-  display: inline !important;
-  padding: 0 4px 0 4px;
+  display: inline-block;
+  margin: 0;
 }
 
 .active {

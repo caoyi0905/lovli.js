@@ -1,5 +1,4 @@
 import React from 'react';
-import {Provider} from 'react-redux';
 import { Router, Route, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
@@ -12,9 +11,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 // Route configuration
 export default (
-  <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={App} />
-    </Router>
-  </Provider>
+  <Router history={history}>
+    <Route path="/" component={App} />
+  </Router>
 );
