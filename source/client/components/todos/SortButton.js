@@ -13,8 +13,8 @@ const SortButton = (props) => {
       <div
         className={styles.sortButton}
         onClick={() => { props.dispatch(setOrderName('text')); props.dispatch(initPage(1)); }}
-        {/* when click the sort button,we should initialize the page */}
       >
+      {/* when click the sort button,we should initialize the page */}
       Sorted by name
       </div>
       <div
